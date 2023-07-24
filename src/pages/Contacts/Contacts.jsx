@@ -6,6 +6,7 @@ import ContactList from '../../components/ContactList/ContactList';
 import { isLoadingSelector } from 'redux/contacts/selectors';
 import Loader from '../../components/Loader/Loader';
 import Filter from '../../components/Filter/Filter';
+import css from './Contacts.module.css';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -19,19 +20,26 @@ const Contacts = () => {
   }, [auth, dispatch]);
 
   return (
-    <>
+    <div className={css.contactsContainer}>
       {isLoading ? (
         <Loader />
       ) : (
         <>
           <h1>Phonebook</h1>
-          <ContactForm />
-          <Filter />
-          <h2>Contacts</h2>
-          <ContactList />
+          <div className={css.contactsComponents}>
+            <div className={css.contactsForm}>
+              <ContactForm />
+              <Filter />
+            </div>
+            <div className={css.contactsList}>
+              <h2>Contacts</h2>
+              <ContactList />
+              <p className={css.contactsNoContacts}>No contacts available.</p>
+            </div>
+          </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

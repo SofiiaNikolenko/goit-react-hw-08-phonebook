@@ -1,0 +1,18 @@
+.homeContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homeTitle {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.homeDescription {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}

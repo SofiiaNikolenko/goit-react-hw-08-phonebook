@@ -1,0 +1,17 @@
+.filter {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.filter label {
+  margin-right: 10px;
+}
+
+.filter input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

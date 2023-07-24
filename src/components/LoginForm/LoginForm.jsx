@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../../redux/auth/operations';
+import css from './LoginForm.module.css';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.loginForm} onSubmit={handleSubmit}>
       <div>
         <label htmlFor="exampleInputEmail1">Email address</label>
         <input

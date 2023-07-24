@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { registrationThunk } from '../../redux/auth/operations';
+import css from './RegistrationForm.module.css';
 
 const RegistrationForm = () => {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const RegistrationForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.registrationForm} onSubmit={handleSubmit}>
       <div>
         <label htmlFor="inputName">Name</label>
         <input
@@ -62,7 +63,7 @@ const RegistrationForm = () => {
           value={email}
         />
         <small id="emailHelp">
-          We'll never share your email with anyone else.
+          We will never share your email with anyone else.
         </small>
       </div>
       <div>

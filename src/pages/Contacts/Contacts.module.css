@@ -1,0 +1,36 @@
+.contactsContainer {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.contactsContainer h1 {
+  margin-bottom: 20px;
+}
+
+.contactsContainer h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.contactsNoContacts {
+  font-style: italic;
+  color: #999;
+}
+
+.contactsComponents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contactsForm {
+  grid-column: 1 / 2;
+}
+
+.contactsList {
+  grid-column: 2 / 3;
+}

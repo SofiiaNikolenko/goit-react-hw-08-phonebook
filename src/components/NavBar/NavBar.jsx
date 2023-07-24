@@ -1,7 +1,4 @@
 import * as React from 'react';
-// import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
-// import Toolbar from '@mui/material/Toolbar';
 import { Outlet } from 'react-router-dom';
 import AuthNav from './AuthNav/AuthNav';
 import { useSelector } from 'react-redux';
@@ -10,30 +7,19 @@ import Navigation from './Navigation/Navigation';
 import { tokenSelector } from 'redux/auth/selectors';
 import { Suspense } from 'react';
 import Loader from '../Loader/Loader';
+import css from './NavBar.module.css';
 
 const NavBar = () => {
   const auth = useSelector(tokenSelector);
   return (
     <>
-      {/* <Box sx={{ flexGrow: 1 }}> */}
-      {/* <AppBar
-          position="fixed"
-          style={{
-            width: 768,
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            left: 0,
-          }}
-        > */}
-      {/* <Toolbar> */}
-      <Navigation />
-      {auth ? <UserMenu /> : <AuthNav />}
-      {/* </Toolbar> */}
-      {/* </AppBar> */}
-      {/* </Box> */}
-      <Suspense fallback={<Loader />}>
-        <Outlet />
-      </Suspense>
+      <div className={css.navBar}>
+        <Navigation />
+        {auth ? <UserMenu /> : <AuthNav />}
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </div>
     </>
   );
 };
