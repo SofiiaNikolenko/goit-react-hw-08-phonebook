@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from '../../redux/operations';
-import { contactsSelector } from '../../redux/selectors';
+import { addContactThunk } from '../../redux/contacts/operations';
+import { contactsSelector } from '../../redux/contacts/selectors';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', phone: '' });
@@ -25,7 +25,7 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(addContact({ name: newName, phone: phone.toString() }));
+    dispatch(addContactThunk({ name: newName, phone: phone.toString() }));
 
     setFormData({ name: '', phone: '' });
   };

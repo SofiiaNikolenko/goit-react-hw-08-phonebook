@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../../redux/operations';
+import { deleteContactThunk } from '../../../redux/contacts/operations';
 
 export const ContactItem = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   const handleDelete = event => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContactThunk(id));
   };
 
   return (
